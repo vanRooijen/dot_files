@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-NOTE BE SURE TO REPLACE "RAYMOND" WITH YOUR USERNAME(directory name) OR JUST FIND THE DIRECTORY YOURSELF 
+###### NOTE BE SURE TO REPLACE "RAYMOND" WITH YOUR USERNAME(directory name) OR JUST FIND THE DIRECTORY YOURSELF 
 
 gnome-shell.css in this repository is where the custom css file for the theme lies.
 
@@ -8,19 +8,19 @@ and replace the gnome-shell.css file in your dir
 /home/raymond/.local/share/themes/Gruvbox-Material-Dark/gnome-shell/gnome-shell.css with the one in this repository 
 
 
-To complete this setup get the gnome extensions:
-Crucial:
+#### To complete this setup get the gnome extensions:
+###### Crucial:
 "User Themes"
-"Dash to Dock" (In the settings of this extensions change the following:
-			  -set Icon size limit 32
-			  -Go to the appearance tab 
-			  -Enable shrink the dash
-			  -Disable Use built-in theme
-			  -Set the opacity to fixed option 
-			  -Set the fixed opacity to 0%)
+"Dash to Dock" == In the settings of this extensions change the following:
+			  - Set Icon size limit 32
+			  - Go to the appearance tab
+			  - Enable shrink the dash
+			  - Disable Use built-in theme
+			  - Set the opacity to fixed option
+			  - Set the fixed opacity to 0%
 "Rounded Window Corners" (In the settings set the color of the window borders to: #786c58) 
 
-Random other extensions to spice things up: 
+###### Random other extensions to spice things up: 
 --"Dash to Dock Animator"-- (one of my favourites)
 Caffeine
 Vitals 
@@ -37,14 +37,14 @@ Media Controls
 Launch new instance
 Just Perfection
  
-Possible errors: 
+#### Possible errors: 
 Note if you have "Blur my Shell" disable the effect on the top panel 
 Disable the Ubuntu Dock extension, it is not needed if you use Dash to Dock
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-The dot files for the terminal: 
+#### The dot files for the terminal: 
 
 I use kitty, the kitty.config will be in the repository (this is found in .config/kitty/kitty.config ) 
 
