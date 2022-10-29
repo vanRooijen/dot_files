@@ -56,4 +56,4 @@ I launch starship from my bash.rc and this controls the prompts ect, my starship
 I also launch neofetch from bash.rc and the configuration file config.conf is the the config for neofetch (is found in 
 /home/raymond/.config/neofetch/)
 
-
+Wallpaper : mushroom.jpg
