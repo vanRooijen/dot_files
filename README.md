@@ -1,5 +1,13 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ###### NOTE BE SURE TO REPLACE "RAYMOND" WITH YOUR USERNAME(directory name) OR JUST FIND THE DIRECTORY YOURSELF 
+
+
+PDF Viewer: zathura 
+Zathura config is located in /home/raymond/.config/zathura/zathurarc
+NOTE that there is no file extension
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 gnome-shell.css in this repository is where the custom css file for the theme lies.
 
