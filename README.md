@@ -2,8 +2,8 @@
 
 
 PDF Viewer: zathura 
-Zathura config is located in /home/raymond/.config/zathura/zathurarc
-NOTE that there is no file extension
+Zathura config is located in /home/raymond/.config/zathura/zathurarc<br />
+NOTE that there is no file extension<br />
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
