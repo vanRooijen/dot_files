@@ -1,3 +1,17 @@
+Developers Note: I will be using this branch to redo the entirety of my dot files at some point in time. 
+Especially as I have made a lot changes to my setup this will serve as a manual not only for others, but also for me to do whenever I get a new computer 
+(so ease of installation is also something i should think about when building these dot files, maybe once I learn more about bash scripting I can use that to help distribute the files IDK anyway I don't have time for this now)
+
+
+
+
+
+
+
+
+
+
+
 ###### NOTE BE SURE TO REPLACE "RAYMOND" WITH YOUR USERNAME(directory name) OR JUST FIND THE DIRECTORY YOURSELF 
 
 
