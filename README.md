@@ -4,8 +4,6 @@
 
 ![preview](Preview.png)
 
-***Please note I am not doing the below yet, I am still creating the dotfiles. It is a work in progress.***
-
 ## Quick Installation Instructions
 I have put a README.md in each of the directories. 
 The README.md contains:
