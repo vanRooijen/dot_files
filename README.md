@@ -1,5 +1,7 @@
 # Raymond's Dotfiles
 
+***Please note I am not doing the below yet, I am still creating the dotfiles. It is a work in progress.***
+
 ![preview](Preview.png)
 
 ***Please note I am not doing the below yet, I am still creating the dotfiles. It is a work in progress.***
