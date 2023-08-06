@@ -94,13 +94,6 @@ alias +='tty-clock -ct -C 5'
 
 # σ  Δ  ε  α  φ  δ  Φ  Γ  λ  θ  μ  π  Ω  τ  ψ  β
 
-# Ω - ohm because I always wanted to become an electrical engineer before I wanted to study computer science - selfstudy
-# Γ - gamma because mathematical statistics is hard and it gives me anxiety - university study
-# ψ - Psi because it looks like a trident and some part of me likes something unique and different - fitness
-# λ - lambda because it's simple and trivial, but part of me none the less - work && self evaluation
-
-# Δ - I have always liked delta, I remember it like yesterday, learning about it and seeing it resurface in nearly every field, it is a very general and unique letter. I have a love for it like I have had a love for books and other little nerdy things. - I can use this to represent responsibly spent free time. (This for one is an example of what I can do in these sessions.) They are very diverse. As are my interests. As is Δ.
-
 alias we='clear && curl wttr.in/?Ttqp0 && echo You too can wear a nose mitten. | lolcat'
 alias weather='clear && curl wttr.in/?tqp1'
 alias weather1='clear && curl wttr.in'
