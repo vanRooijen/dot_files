@@ -6,9 +6,11 @@ I want to include the following type table in my README.md to create a good over
 Example:
 
 |nvim_example|terminal|music_player|
+|![img](previews/nvim_example.png)|![img](previews/terminal_example.png)|![img](previews/music_player_example_01.png)|
 |--|--|--|
-|![img](previews/nvim_example.png)|![img](previews/terminal_example.png)|![img](previews/music_player_example_01.png)![img](previews/music_player_example_01.png)|
-|
+|something_else|another_thing|and_another_thing|
+|![img](previews/nvim_example.png)|![img](previews/terminal_example.png)|![img](previews/music_player_example_01.png)|
+
 
 ![preview](previews/Preview.png)
 
