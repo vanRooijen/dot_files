@@ -2,7 +2,15 @@
 
 ***Please note I am not doing the below yet, I am still creating the dotfiles. It is a work in progress.***
 
-![preview](Preview.png)
+I want to include the following type table in my README.md to create a good overall of everything.
+Example:
+
+|nvim_example|terminal|music_player|
+|--|--|--|
+|![img](previews/nvim_example.png)|![img](previews/terminal_example.png)|![img](previews/music_player_example_01.png)|
+
+
+![preview](previews/Preview.png)
 
 ## Quick Installation Instructions
 I have put a README.md in each of the directories. 
