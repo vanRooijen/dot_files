@@ -7,7 +7,7 @@ Example:
 
 |nvim_example|terminal|music_player|
 |--|--|--|
-|![img](previews/nvim_example.png)|![img](previews/terminal_example.png)||![img](previews/music_player_example_01.png)|![img](previews/music_player_example_01.png)||
+|![img](previews/nvim_example.png)|![img](previews/terminal_example.png)|![img](previews/music_player_example_01.png)![img](previews/music_player_example_01.png)|
 |
 
 ![preview](previews/Preview.png)
