@@ -6,14 +6,16 @@ vim.opt.guicursor = "n-c-v:block,i-ci-ve:ver25,r-cr-o:block"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.linebreak = true
+--vim.opt.linebreak = true
 
-vim.opt.tabstop = 4 
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4 
-vim.opt.expandtab = true
+vim.opt.tabstop = 4
+-- vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+--vim.opt.expandtab = true
 
-vim.opt.smartindent = true 
+vim.opt.smartindent = true
+
+vim.opt.textwidth = 80
 
 vim.opt.wrap = true
 
@@ -27,7 +29,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 12
+vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
@@ -37,7 +39,6 @@ vim.opt.updatetime = 50
 
 
 --vim.opt.formatoptions:append("tcrwa")
-vim.opt.textwidth = 100
 
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
