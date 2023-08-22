@@ -1,11 +1,15 @@
 # Raymond's Dot Files
 
+<<<<<<< HEAD
 TODO: 
 
 - Add tmux configuration
 
 
 ***Please note I am not doing the below yet, I am still creating the dotfiles. It is a work in progress.***
+=======
+***Please note I am just paying around with how I might create the dotfiles. It is a work in progress.***
+>>>>>>> a5686d348ccd1081412fcf854839181280cf42fc
 
 I want to include the following type table in my README.md to create a good overall of everything.
 Example:
