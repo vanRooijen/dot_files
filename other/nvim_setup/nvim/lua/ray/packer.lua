@@ -106,6 +106,26 @@ use {
   'jghauser/follow-md-links.nvim'
 }
 
+use{'img-paste-devs/img-paste.vim'}
+
+use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v2.x',
+  requires = {
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},             -- Required
+    {'williamboman/mason.nvim'},           -- Optional
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},     -- Required
+    {'hrsh7th/cmp-nvim-lsp'}, -- Required
+    {'L3MON4D3/LuaSnip'},     -- Required
+  }
+}
+
+use('tpope/vim-fugitive')   
+
 -- install without yarn or npm
 --use({
 --    "iamcco/markdown-preview.nvim",
@@ -117,5 +137,9 @@ use {
 --Simple games to use to learn vim bindings etc.
 use ('ThePrimeagen/vim-be-good')
 
+-- Restore vim sessions
+use 'tpope/vim-obsession'
+
 
 end) 
+
