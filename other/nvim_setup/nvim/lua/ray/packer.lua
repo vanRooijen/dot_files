@@ -34,7 +34,6 @@ return require('packer').startup(function(use)
   -- Tabs and some icons used by other things as well
   use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
   use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
---  use 'romgrk/barbar.nvim'
 
   -- Comparison View
   use "sindrets/diffview.nvim" 
@@ -60,8 +59,6 @@ return require('packer').startup(function(use)
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
-
-
 
   --Markdown wiki system tools 
   --Installs luarocks as well
@@ -91,7 +88,9 @@ use {
 use ('nvim-tree/nvim-tree.lua')
 
 -- bufferline 
-use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+-- use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+  use 'romgrk/barbar.nvim'
 
 -- Here is my latex plugin
 use 'lervag/vimtex'
