@@ -1,17 +1,10 @@
 # Raymond's Dot Files
 
-<<<<<<< HEAD
+***Please note I am not doing the below yet, I am still creating the dotfiles. It is a work in progress.***
+
 TODO: 
 
-- Add tmux configuration
-
-
-***Please note I am not doing the below yet, I am still creating the dotfiles. It is a work in progress.***
-=======
-***Please note I am just paying around with how I might create the dotfiles. It is a work in progress.***
->>>>>>> a5686d348ccd1081412fcf854839181280cf42fc
-
-I want to include the following type table in my README.md to create a good overall of everything.
+-[ ] I want to include the following type table in my README.md to create a good overall of everything.
 Example:
 
 |[nvim_example](other/nvim_setup)|[terminal](terminal_setup)|[music_player](other/music_player)|
@@ -23,13 +16,3 @@ Example:
 
 ![preview](previews/Preview.png)
 
-## Quick Installation Instructions
-I have put a README.md in each of the directories. 
-The README.md contains:
-- An important explanation of where the specific configuration file should be 
-located on your system
-- A brief explanation of what the directory contains.
-- A Screenshot of how the finished config looks
-
-## New to the community?
-Possibly provide some pointers...
