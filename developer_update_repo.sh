@@ -39,18 +39,6 @@ compare_contents() {
     fi
 }
 
-# --------------------------------------------------------- NVIM
-SRC_NVIM="/home/raymond/.config/nvim"
-DEST_NVIM="/home/raymond/Documents/projects/dot_files/other/nvim_setup/nvim"
-
-if compare_contents "$SRC_NVIM" "$DEST_NVIM" "NVIM config"; then
-    echo "== NVIM config stays the same"
-else
-    [ -n "$DEST_NVIM" ] && rm -rf "$DEST_NVIM"/*
-    cp -r "$SRC_NVIM"/* "$DEST_NVIM"
-    check_status "Failed to copy nvim config"   
-    echo "++ NVIM config is updated"
-fi
 
 # --------------------------------------------------------- WALLPAPERS
 SRC_WALLPAPERS="/home/raymond/Pictures/the_chosen/chosen"
@@ -124,6 +112,9 @@ fi
 
 
 
+
+# -------------------------TERM SETUP----------------------
+#
 # --------------------------------------------------------- BASH SETUP
 SRC_BASH="/home/raymond/.bashrc"
 DEST_BASH="/home/raymond/Documents/projects/dot_files/term_setup/bash_setup/.bashrc"
@@ -149,6 +140,69 @@ else
 	echo "++ Kitty config is updated"
 fi
 
+# --------------------------------------------------------- TMUX SETUP
+SRC_TMUX="/home/raymond/.tmux.conf"
+DEST_TMUX="/home/raymond/Documents/projects/dot_files/term_setup/tmux_setup/.tmux.config"
+
+if compare_contents "$SRC_TMUX" "$DEST_TMUX" "Tmux config"; then
+	echo "== Tmux config stays the same"
+else
+	cp "$SRC_TMUX" "$DEST_TMUX"
+	check_status "Failed to copy Tmux config"
+	echo "++ Tmux config is updated"
+fi
+
+# --------------------------------------------------------- STARSHIP SETUP
+SRC_STARSHIP="/home/raymond/.config/starship.toml"
+DEST_STARSHIP="/home/raymond/Documents/projects/dot_files/term_setup/starship_setup/starship.toml"
+
+if compare_contents "$SRC_STARSHIP" "$DEST_STARSHIP" "Starship config"; then
+	echo "== Starship config stays the same"
+else
+	cp "$SRC_STARSHIP" "$DEST_STARSHIP"
+	check_status "Failed to copy Starship config"
+	echo "++ Starship config is updated"
+fi
 
 
+
+# ------------------------- OTHER -------------------------
+
+# --------------------------------------------------------- GIT SETUP
+SRC_GIT="/home/raymond/.gitconfig"
+DEST_GIT="/home/raymond/Documents/projects/dot_files/other/git_setup/.gitconfig"
+
+if compare_contents "$SRC_GIT" "$DEST_GIT" "Git config"; then
+	echo "== Git config stays the same"
+else
+	cp "$SRC_GIT" "$DEST_GIT"
+	check_status "Failed to copy Git config"
+	echo "++ Git config is updated"
+fi
+
+# --------------------------------------------------------- NVIM SETUP
+SRC_NVIM="/home/raymond/.config/nvim"
+DEST_NVIM="/home/raymond/Documents/projects/dot_files/other/nvim_setup/nvim"
+
+if compare_contents "$SRC_NVIM" "$DEST_NVIM" "NVIM config"; then
+    echo "== NVIM config stays the same"
+else
+    [ -n "$DEST_NVIM" ] && rm -rf "$DEST_NVIM"/*
+    cp -r "$SRC_NVIM"/* "$DEST_NVIM"
+    check_status "Failed to copy nvim config"   
+    echo "++ NVIM config is updated"
+fi
+
+# --------------------------------------------------------- ZATHURA SETUP
+SRC_ZATHURA="/home/raymond/.config/zathura"
+DEST_ZATHURA="/home/raymond/Documents/projects/dot_files/other/zathura_setup/zathura"
+
+if compare_contents "$SRC_ZATHURA" "$DEST_ZATHURA" "Zathura config"; then
+	echo "== Zathura config stays the same"
+else
+	[ -n "$DEST_ZATHURA" ] && rm -rf "$DEST_ZATHURA"/*
+	cp -r "$SRC_ZATHURA"/* "$DEST_ZATHURA"
+	check_status "Failed to copy Zathura config"
+	echo "++ Zathura config is updated"
+fi
 
