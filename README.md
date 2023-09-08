@@ -4,7 +4,7 @@
 
 TODO: 
 
--[ ] I want to include the following type table in my README.md to create a good overall of everything.
+I want to include the following type table in my README.md to create a good overall of everything.
 Example:
 
 |[nvim_example](other/nvim_setup)|[terminal](terminal_setup)|[music_player](other/music_player)|
