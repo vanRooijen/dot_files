@@ -1,9 +1,0 @@
-set guioptions "s v"
-set window-height 1000
-set window-width 1500
-set default-bg \#282828
-set recolor
-set recolor-keephue
-set recolor-darkcolor \#C1AF8C
-set recolor-lightcolor \#222222
-set selection-clipboard clipboard

@@ -104,9 +104,10 @@ use 'vim-pandoc/vim-pandoc-syntax'
 use {
   'jghauser/follow-md-links.nvim'
 }
-
 use{'img-paste-devs/img-paste.vim'}
 
+
+-- LSP
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
@@ -123,6 +124,7 @@ use {
   }
 }
 
+-- Git wrapper
 use('tpope/vim-fugitive')   
 
 -- install without yarn or npm
