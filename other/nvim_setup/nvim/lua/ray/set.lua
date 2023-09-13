@@ -8,10 +8,10 @@ vim.opt.relativenumber = true
 
 --vim.opt.linebreak = true
 
-vim.opt.tabstop = 4
--- vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
 --vim.opt.expandtab = true
+--vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 vim.opt.smartindent = true
 
@@ -35,14 +35,10 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
---vim.opt.colorcolumn = "80"
-
-
---vim.opt.formatoptions:append("tcrwa")
-
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 
+--My code to auto convert markdown to pdf
 vim.api.nvim_exec([[
   augroup autosave_markdown
     autocmd!

@@ -2473,7 +2473,7 @@ StEntry StLabel.hint-text,
 /* Top Bar */
 
 #panel {
-background-color: rgba(29, 32, 33, 0.95);
+background-color: rgba(29, 32, 33, 0.85);/*was .95 transparency*/
 /*background-color: transparent;*/
   color: #bdae8e;
   font-size: 11pt;
@@ -3529,7 +3529,7 @@ StScrollBar StButton#hhandle:active {
 
 }
 .dash-background {
-  background-color: rgba(29, 32, 33, 0.95);
+  background-color: rgba(29, 32, 33, 0.85);/*was .95 transparency*/
   border-radius: 5px;
   padding: 6px 0;
   border: 2px solid #c3af8d; }
