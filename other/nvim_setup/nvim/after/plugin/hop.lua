@@ -26,17 +26,20 @@ vim.cmd('hi HopNextKey2 guifg=#909005')
 -- Here are some of my own commands
 
 -- Hop Anywhere
- vim.api.nvim_set_keymap('n', '<leader>T', ':HopAnywhere<cr>', { noremap = true, silent = true })
+ vim.api.nvim_set_keymap('n', '<M-O>', ':HopAnywhere<cr>', { noremap = true, silent = true })
+ vim.api.nvim_set_keymap('v', '<M-O>', ':HopAnywhere<cr>', { noremap = true, silent = true })
 
---Hop Word
- vim.api.nvim_set_keymap('n', '<leader>t', ':HopWord<cr>', { noremap = true, silent = true })
-
+ --Hop Word
+ vim.api.nvim_set_keymap('n', '<M-o>', ':HopWord<cr>', { noremap = true, silent = true })
+ vim.api.nvim_set_keymap('v', '<M-o>', ':HopWord<cr>', { noremap = true, silent = true })
 
 -- Hop in Line with Char
- vim.api.nvim_set_keymap('n', '<leader>f', ':HopChar1CurrentLine<cr>', { noremap = true, silent = true })
-
- --Hop Line
- vim.api.nvim_set_keymap('n', '<leader>F', ':HopLine<cr>', { noremap = true, silent = true })
+ vim.api.nvim_set_keymap('n', '<M-l>', ':HopChar1CurrentLine<cr>', { noremap = true, silent = true })
+ vim.api.nvim_set_keymap('v', '<M-l>', ':HopChar1CurrentLine<cr>', { noremap = true, silent = true })
+ 
+--Hop Line
+ vim.api.nvim_set_keymap('n', '<M-L>', ':HopLine<cr>', { noremap = true, silent = true })
+ vim.api.nvim_set_keymap('v', '<M-L>', ':HopLine<cr>', { noremap = true, silent = true })
 
 
 

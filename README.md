@@ -10,9 +10,7 @@ Example:
 |[nvim_example](other/nvim_setup)|[terminal](terminal_setup)|[music_player](other/music_player)|
 |--|--|--|
 |![img](previews/nvim_example.png)|![img](previews/terminal_example.png)|![img](previews/music_player_example_01.png)|
-|something_else|another_thing|and_another_thing|
-|![img](previews/nvim_example.png)|![img](previews/terminal_example.png)|![img](previews/music_player_example_01.png)|
 
 
-![preview](previews/Preview.png)
+![preview](previews/United_latest.png)
 

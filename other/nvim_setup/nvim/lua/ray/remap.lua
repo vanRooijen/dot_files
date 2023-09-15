@@ -8,7 +8,7 @@ vim.g.mapleader = " "
    vim.api.nvim_set_keymap(type, key, value, {noremap = true, silent = true})
  end
 map('n', '<leader>po', ':!xdg-open %<CR>')
-map('n', '<leader>pm', ':set formatoptions=tcrwa<CR>') 
+map('n', '<leader>pm', ':set formatoptions=tcrwa<CR>')
 map('n', '<leader>pn', ':set formatoptions=tc<CR>')
 map('n', '<leader>fw', ':%!clang-format --style=Google<CR>')
 
@@ -24,4 +24,6 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
-
+-- Half page jumping
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
