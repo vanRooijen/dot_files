@@ -52,20 +52,18 @@ gnome environment.
 
 When you want to restore it, you can simply run the command
 'ray_dotfiles --restore'
-And it should if everything works correctly restore your previous setup.
-It will also delete everything it has installed.
-Packages installed with apt, will also be removed, however they will be removed
-with apt remove and not purge as I would be hesitant to possibly remove
-dependencies if you are the type of person who has a problem with that you
-will most likely be able to change it yourself in my source code."
+And it should if everything works correctly restore your previous setup."
+	echo
 }
 
 info_wallpapers() {
-	DEST_WALLPAPERS="$HOME/Pictures/the_chosen_ones"
+	echo "--------------------------------------------------"
+	echo "This function will just download some nice wallpapers."
+	echo
+	echo "The wallpapers will be downloaded to the following directory:"
+	echo "	- Wallpapers: $HOME/Pictures/the_chosen_ones"
+	echo
 
-	echo "This function will simply install a few wallpapers in your pictures
-directory."
-echo"(Specifically in the directory $DEST_WALLPAPERS)"
 }
 prompt_wallpapers() {
 	read -p "--------------------------------------------------
@@ -110,8 +108,29 @@ echo "
 "
 }
 
+applying_wallpapers() {
+	echo "Changing your wallpaper to $HOME/Pictures/the_chosen_ones/highland_cow_grain_0_070.jpg"
+	gsettings set org.gnome.desktop.background picture-uri "file://$HOME/Pictures/the_chosen_ones/highland_cow_grain_0_070.jpg"
+
+}
+
 
 # --------------------------------------------------------- PROMPT GTK THEMES
+
+info_gtk_themes() {
+	echo "--------------------------------------------------"
+	echo "This function will install GTK-3 and GTK-4 themes."
+	echo "GTK-3 and GTK-4 are the primary libraries used to render the user
+interface of applications in GNOME."
+	echo "The configuration files for GTK-3 and GTK-4 simply then changes the
+way your windows look."
+	echo
+	echo "The themes will be installed in the following directories:"
+	echo "	- GTK-3: $HOME/.config/gtk-3.0"
+	echo "	- GTK-4: $HOME/.config/gtk-4.0"
+	echo
+}
+
 prompt_gtk_themes() {
 	read -p "--------------------------------------------------
 Do you want to install GTK-3 and GTK-4 themes? (Y/N): " response
@@ -185,6 +204,22 @@ echo "
 
 # --------------------------------------------------------- GNOME THEME
 
+info_gnome_theme() {
+	echo "--------------------------------------------------"
+	echo "This function will install a GNOME theme."
+	echo "GNOME is the default desktop environment for Ubuntu and Fedora. Gnome
+is much more than just a desktop environment, it is an entire ecosystem of
+software. It uses GTK-3 and GTK-4 to render the user interface of applications."
+echo "
+You might want to see this as changing the theme of the top bar and the dock.
+However because of the way GNOME is built, it will also change the aesthetics of
+many other things you see."
+	echo
+	echo "The GNOME theme will be installed in the following directory:"
+	echo "	- GNOME: $HOME/.themes/Gruvbox-Dark-B"
+	echo
+}
+
 prompt_gnome_theme() {
 	read -p "--------------------------------------------------
 Do you want to install GNOME theme? (Y/N): " response
@@ -226,11 +261,26 @@ echo "✓ GNOME theme installation complete.
 "
 }
 
+applying_gnome_theme() {
+
+
+}
+
 # --------------------------------------------------------- ICON THEME
 # Here there might be writing into a directory that already exists and doing so
 # either corrupting it or overwriting the files that are in there. Which is very
 # likely as they probably have identical names.
 # Further this should be enabled with G-settings.
+
+info_icon_theme() {
+	echo "--------------------------------------------------"
+	echo "This function will install an Icon theme."
+	echo "Icon themes are used to change the appearance of icons in your system."
+	echo
+	echo "The Icon theme will be installed in the following directory:"
+	echo "	- Icon: $HOME/.icons/Gruvbox"
+	echo
+}
 
 prompt_icon_theme() {
 	read -p "--------------------------------------------------
@@ -273,6 +323,8 @@ echo "✓ Icon theme installation complete.
 "
 }
 
+applying_icon_theme() {
+}
 
 # -------------------------TERM SETUP----------------------
 #

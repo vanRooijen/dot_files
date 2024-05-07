@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +115 initial_install_script.sh
+badd +266 initial_install_script.sh
 badd +128 ~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md
 badd +2 ~/Documents/coding_projects/work_flow/dot_files/.gitignore
 badd +1 ~/Documents/coding_projects/work_flow/dot_files/expansion_idea.md
@@ -52,12 +52,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 264 - ((41 * winheight(0) + 25) / 50)
+let s:l = 266 - ((39 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 264
-normal! 037|
+keepjumps 266
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md", ":p")) | buffer ~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md | else | edit ~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md | endif
@@ -75,12 +75,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 36 - ((23 * winheight(0) + 25) / 50)
+let s:l = 90 - ((44 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 36
-normal! 010|
+keepjumps 90
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)
 exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
