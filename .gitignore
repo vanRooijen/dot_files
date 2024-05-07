@@ -1,3 +1,6 @@
 developer_update_repo.sh
 client_update.sh
 narga_server_update.sh
+notes.md
+compartementalized_notes.md
+state_restore/
