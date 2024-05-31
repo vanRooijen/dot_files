@@ -1,4 +1,4 @@
-# Raymond's Dot Files
+# Ray's Dot Files
 
 ***Please note I am still creating the dotfiles. It is a work in progress.***
 
