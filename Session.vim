@@ -13,15 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +266 initial_install_script.sh
-badd +128 ~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md
-badd +2 ~/Documents/coding_projects/work_flow/dot_files/.gitignore
-badd +1 ~/Documents/coding_projects/work_flow/dot_files/expansion_idea.md
-badd +89 ~/Documents/coding_projects/work_flow/dot_files/install_variety.sh
+badd +66 initial_install_script.sh
+badd +63 ~/Documents/coding_projects/work_flow/dot_files/install_general.sh
 argglobal
 %argdel
 $argadd initial_install_script.sh
-edit initial_install_script.sh
+edit ~/Documents/coding_projects/work_flow/dot_files/install_general.sh
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -41,7 +38,7 @@ set winwidth=1
 exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)
 exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
 argglobal
-balt ~/Documents/coding_projects/work_flow/dot_files/install_variety.sh
+balt initial_install_script.sh
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -52,21 +49,21 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 266 - ((39 * winheight(0) + 25) / 50)
+let s:l = 45 - ((32 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 266
-normal! 0
+keepjumps 45
+normal! 051|
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md", ":p")) | buffer ~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md | else | edit ~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md | endif
+if bufexists(fnamemodify("initial_install_script.sh", ":p")) | buffer initial_install_script.sh | else | edit initial_install_script.sh | endif
 if &buftype ==# 'terminal'
-  silent file ~/Documents/coding_projects/work_flow/dot_files/install_script_notes.md
+  silent file initial_install_script.sh
 endif
-balt initial_install_script.sh
+balt ~/Documents/coding_projects/work_flow/dot_files/install_general.sh
 setlocal fdm=manual
-setlocal fde=pandoc#folding#FoldExpr()
+setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
@@ -75,11 +72,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 90 - ((44 * winheight(0) + 25) / 50)
+let s:l = 66 - ((26 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 90
+keepjumps 66
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)

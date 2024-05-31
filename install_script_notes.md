@@ -14,6 +14,48 @@ I think it is realistic to create an interface to show all the configurations
 and themes that you have on your system, as well as back them up and be able to
 convert back to the original state you were in.
 
+## Script limited
+I think I should limit the use of my script to a few common things that people
+will want to easily install, if you want something more niche like the config of
+my pdf viewer, you can always install it manually. Or I could put that in
+a completely separate script.
+
+That is something I think is nice to put in a completely separate script,
+because a pdf viewer is still something that is used in general by everyone.
+And while Zathura is very nice for vim users, given it's vim-like keybindings,
+it is also wonderful in it's simplicity applicable to a general audience.
+
+It is also good to split all the install functions such that it is not a very
+convoluted script to use. Rather, you can run auto_install.sh --pdf_viewer and
+it will install the pdf viewer and it's configuration.
+auto_install.sh --wallpapers and it will install the wallpapers as well as
+variety, which is feel is good for switching wallpapers.
+
+In Summary, I think I should break the script up into the following parts:
+
+- [ ] raydots.sh - the shell of the scripts, simply something that will handle
+all the parameters and call the other scripts.
+- [ ] install_general.sh - the script that will install the shell theme. gtk theme,
+icon theme
+- [ ] install_pdf_viewer.sh - the script that will install the pdf viewer and it's
+configuration.
+- [ ] install_wallpapers.sh - the script that will install the wallpapers and
+variety.
+- [ ] install_terminal.sh - the script that will install kitty terminal and it's
+configuration, as well as adding to the bash script and also 
+- [ ] auto_update.sh - the script that will pull updates from my repository based on
+the version of gnome you are running.
+
+## Note:
+Auto Update, should work as I have previously described where it actually
+calls a changing script from the internet, which will update the system
+according to what is necessary with the current update that gnome is doing.
+This can be done as a cronjob, which also maybe should check if the gnome
+version has updated on every start up. This way, if it is updated and the user
+theme will be out of date, you can turn the extension off and say a notification
+configuration for your gnome version is currently being updated.
+
+
 ## Current state of the script:
 For the install script, I do not yet want to do any of that.
 
@@ -33,7 +75,6 @@ First I want to note the latest changes to my idea and what it entails:
 - I think I should not install any applications with an package manager, this is
 hacky and not a very professional idea, If they want to install something they
 can do it themselves.
-- I think 
 
 ### Bash Configuration
 - [ ] Redo the bash configuration, such that it does not include some of my

@@ -1,330 +1,12 @@
 #!/usr/bin/env sh
 
-current_dir=$(pwd)
 
-# Function to check the exit status of the last command
-check_status() {
-	if [ $? -ne 0 ]; then
-		echo "$1"
-		exit 1
-	fi
-}
-
-#---------------------------------------------------------IDENTIFY OS
+#----------------------------------THis file is not just filled with remnants of
+#what was. If there is anything like directory locations I used, that is not
+#initialized, I will probably find it in either wallpaper or general
+#installation scripts. 
 
 
-# --------------------------------------------------------- WALLPAPERS
-# This should not really be a risk for overwriting a file, however it might if
-# the user has used my script before. and maybe they would not want to remove
-# the old wallpapers, if I have removed some, so it should not ask, however
-# if the file does exist, it should only add to the file. As long as you do that
-# it probably won't be a problem.
-
-info_general() {
-	echo
-	echo "OVERVIEW OF SCRIPT"
-	echo "	- Install Wallpapers"
-	echo "	- Install GTK-3 and GTK-4 themes"
-	echo "	- Install GNOME theme"
-	echo "	- Install Icon theme"
-	echo "	- Install Kitty setup"
-	echo "	- Install Tmux setup"
-	echo "	- Install Starship setup"
-	echo "	- Install Bash setup"
-	echo "	- Install Git setup"
-	echo "	- Install Neovim setup"
-	echo "	- Install Zathura setup"
-	echo
-	echo "HOW IT WORKS"
-	echo "Before every category of thing to install, I will give a bit of
-information about how it works or just generally some tips concerning that
-category of installation. After reading this, you can choose to install of not
-that specific category of thing/s."
-
-	echo
-	echo "VERY IMPORTANT NOTICE"
-	echo "This script will save your current setup, such that you can revert to
-it if it does not work or you don't like the setup.
-It will put all the configuration files that it replaces in a directory called
-state_restore.
-Further, it will remember all environmental variables that where changed in your
-gnome environment.
-
-When you want to restore it, you can simply run the command
-'ray_dotfiles --restore'
-And it should if everything works correctly restore your previous setup."
-	echo
-}
-
-info_wallpapers() {
-	echo "--------------------------------------------------"
-	echo "This function will just download some nice wallpapers."
-	echo
-	echo "The wallpapers will be downloaded to the following directory:"
-	echo "	- Wallpapers: $HOME/Pictures/the_chosen_ones"
-	echo
-
-}
-prompt_wallpapers() {
-	read -p "--------------------------------------------------
-Do you want to download wallpapers? (Y/N): " response
-	case $response in
-		[yY])
-			download_wallpapers
-			;;
-		[nN])
-			echo "Skipping wallpapers download."
-			;;
-		*)
-			echo "Invalid response. Please enter Y or N."
-			prompt_wallpapers
-			;;
-	esac
-}
-
-download_wallpapers() {
-# Source and destination directories
-SRC_WALLPAPERS="$current_dir/wallpapers"
-DEST_WALLPAPERS="$HOME/Pictures/the_chosen_ones"
-
-# Check if the destination directory exists, create it if not
-if [ ! -d "$DEST_WALLPAPERS" ]; then
-	echo "
-Creating directory $DEST_WALLPAPERS..."
-	mkdir -p "$DEST_WALLPAPERS"
-	check_status "Failed to create directory $DEST_WALLPAPERS"
-else
-	echo "
-Directory $DEST_WALLPAPERS already exists."
-fi
-
-# Copy wallpapers to the destination directory
-echo "Downloading wallpapers..."
-#TODO: cp -r "$SRC_WALLPAPERS/"* "$DEST_WALLPAPERS"
-check_status "Failed to download wallpapers"
-
-echo "
-✓ Wallpapers download complete.
-"
-}
-
-applying_wallpapers() {
-	echo "Changing your wallpaper to $HOME/Pictures/the_chosen_ones/highland_cow_grain_0_070.jpg"
-	gsettings set org.gnome.desktop.background picture-uri "file://$HOME/Pictures/the_chosen_ones/highland_cow_grain_0_070.jpg"
-
-}
-
-
-# --------------------------------------------------------- PROMPT GTK THEMES
-
-info_gtk_themes() {
-	echo "--------------------------------------------------"
-	echo "This function will install GTK-3 and GTK-4 themes."
-	echo "GTK-3 and GTK-4 are the primary libraries used to render the user
-interface of applications in GNOME."
-	echo "The configuration files for GTK-3 and GTK-4 simply then changes the
-way your windows look."
-	echo
-	echo "The themes will be installed in the following directories:"
-	echo "	- GTK-3: $HOME/.config/gtk-3.0"
-	echo "	- GTK-4: $HOME/.config/gtk-4.0"
-	echo
-}
-
-prompt_gtk_themes() {
-	read -p "--------------------------------------------------
-Do you want to install GTK-3 and GTK-4 themes? (Y/N): " response
-	case $response in
-		[yY])
-			install_gtk3_theme
-			install_gtk4_theme
-			;;
-		[nN])
-			echo "Skipping GTK theme installation."
-			;;
-		*)
-			echo "Invalid response. Please enter Y or N."
-			prompt_gtk3_theme
-			;;
-	esac
-}
-
-# --------------------------------------------------------- GTK-3 THEME
-
-install_gtk3_theme() {
-SRC_GTK3="$current_dir/gtk_theme/gtk-3.0/"
-DEST_GTK3="$HOME/.config/gtk-3.0"
-
-# Ensure the destination directory exists
-if [ ! -d "$DEST_GTK3" ]; then
-	echo "
-Creating directory $DEST_GTK3..."
-	mkdir -p "$DEST_GTK3"
-	check_status "Failed to create directory $DEST_GTK3"
-else
-	echo "
-Directory $DEST_GTK3 already exists."
-fi
-
-# Install GTK-3 theme
-echo "Installing GTK-3 theme..."
-#TODO: cp -r "$SRC_GTK3"/* "$DEST_GTK3"
-check_status "Failed to copy GTK-3 theme"
-
-echo "
-✓ GTK-3 theme installation complete.
-"
-}
-
-# --------------------------------------------------------- GTK-4 THEME
-
-install_gtk4_theme() {
-SRC_GTK4="$current_dir/gtk_theme/gtk-4.0/"
-DEST_GTK4="$HOME/.config/gtk-4.0"
-
-# Ensure the destination directory exists
-if [ ! -d "$DEST_GTK4" ]; then
-	echo "
-Creating directory $DEST_GTK4..."
-	mkdir -p "$DEST_GTK4"
-	check_status "Failed to create directory $DEST_GTK4"
-else
-	echo "
-Directory $DEST_GTK4 already exists."
-fi
-
-# Install GTK-4 theme
-echo "Installing GTK-4 theme..."
-#TODO: cp -r "$SRC_GTK4"/* "$DEST_GTK4"
-check_status "Failed to copy GTK-4 theme"
-
-echo "
-✓ GTK-4 theme installation complete."
-}
-
-# --------------------------------------------------------- GNOME THEME
-
-info_gnome_theme() {
-	echo "--------------------------------------------------"
-	echo "This function will install a GNOME theme."
-	echo "GNOME is the default desktop environment for Ubuntu and Fedora. Gnome
-is much more than just a desktop environment, it is an entire ecosystem of
-software. It uses GTK-3 and GTK-4 to render the user interface of applications."
-echo "
-You might want to see this as changing the theme of the top bar and the dock.
-However because of the way GNOME is built, it will also change the aesthetics of
-many other things you see."
-	echo
-	echo "The GNOME theme will be installed in the following directory:"
-	echo "	- GNOME: $HOME/.themes/Gruvbox-Dark-B"
-	echo
-}
-
-prompt_gnome_theme() {
-	read -p "--------------------------------------------------
-Do you want to install GNOME theme? (Y/N): " response
-	case $response in
-		[yY])
-			install_gnome_theme
-			;;
-		[nN])
-			echo "Skipping GNOME theme installation."
-			;;
-		*)
-			echo "Invalid response. Please enter Y or N."
-			prompt_gnome_theme
-			;;
-	esac
-}
-
-install_gnome_theme() {
-SRC_GNOME="$current_dir/gnome_theme/Gruvbox-Dark-B"
-DEST_GNOME="$HOME/.themes/Gruvbox-Dark-B"
-
-# Ensure the destination directory exists
-if [ ! -d "$DEST_GNOME" ]; then
-	echo "
-Creating directory $DEST_GNOME..."
-	mkdir -p "$DEST_GNOME"
-	check_status "Failed to create directory $DEST_GNOME"
-else
-	echo "
-Directory $DEST_GNOME already exists."
-fi
-
-# Install GNOME theme
-echo "Installing GNOME theme..."
-#TODO: cp -r "$SRC_GNOME"/* "$DEST_GNOME"
-check_status "Failed to copy GNOME theme"
-
-echo "✓ GNOME theme installation complete.
-"
-}
-
-applying_gnome_theme() {
-
-
-}
-
-# --------------------------------------------------------- ICON THEME
-# Here there might be writing into a directory that already exists and doing so
-# either corrupting it or overwriting the files that are in there. Which is very
-# likely as they probably have identical names.
-# Further this should be enabled with G-settings.
-
-info_icon_theme() {
-	echo "--------------------------------------------------"
-	echo "This function will install an Icon theme."
-	echo "Icon themes are used to change the appearance of icons in your system."
-	echo
-	echo "The Icon theme will be installed in the following directory:"
-	echo "	- Icon: $HOME/.icons/Gruvbox"
-	echo
-}
-
-prompt_icon_theme() {
-	read -p "--------------------------------------------------
-Do you want to install Icon theme? (Y/N): " response
-	case $response in
-		[yY])
-			install_icon_theme
-			;;
-		[nN])	
-			echo "Skipping Icon theme installation."
-			;;
-		*)
-			echo "Invalid response. Please enter Y or N."
-			prompt_icon_theme
-			;;
-	esac
-}
-
-install_icon_theme() {
-SRC_ICON="$current_dir/icon_theme/Gruvbox"
-DEST_ICON="$HOME/.icons/Gruvbox"
-
-# Ensure the destination directory exists
-if [ ! -d "$DEST_ICON" ]; then
-	echo "
-Creating directory $DEST_ICON..."
-	mkdir -p "$DEST_ICON"
-	check_status "Failed to create directory $DEST_WALLPAPERS"
-else
-	echo "
-Directory $DEST_ICON already exists."
-fi
-
-# Install Icon theme
-echo "Installing Icon theme..."
-#: cp -r "$SRC_ICON"/* "$DEST_ICON"
-check_status "Failed to copy Icon theme"
-
-echo "✓ Icon theme installation complete.
-"
-}
-
-applying_icon_theme() {
-}
 
 # -------------------------TERM SETUP----------------------
 #
@@ -334,6 +16,17 @@ applying_icon_theme() {
 # There is no things that must be enabled here, you simply pop in the config and
 # you are done.
 
+info_kitty_setup() {
+	echo "--------------------------------------------------"
+	echo "If you don't have kitty Terminal installed, you can skip this."
+	echo 
+	echo "However if you do have Kitty installed, this is a nice setup for it."
+	echo "Kitty is a fast, featureful, GPU based terminal emulator."
+	echo
+	echo "The Kitty setup will be installed in the following directory:"
+	echo "	- Kitty: $HOME/.config/kitty"
+	echo
+}
 
 prompt_kitty_setup() {
 	read -p "--------------------------------------------------
@@ -346,6 +39,7 @@ Do you want to install Kitty setup? (Y/N): " response
 			echo "Skipping Kitty setup installation."
 			;;
 		*)
+
 			echo "Invalid response. Please enter Y or N."
 			prompt_kitty_setup
 			;;
@@ -422,6 +116,7 @@ Do you want to install Starship setup? (Y/N): " response
 		[nN])
 			echo "Skipping Starship setup installation."
 			;;
+
 		*)
 			echo "Invalid response. Please enter Y or N."
 			prompt_starship_setup

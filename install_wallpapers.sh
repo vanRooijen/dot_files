@@ -1,4 +1,11 @@
-	echo "Variety is a wallpaper manager for Linux systems. It supports out-of-the-box
+#!/usr/bin/env sh
+
+# This start of this script is wrong, but still something I will have to build
+# into the script, I initially just wanted a script to seperate the installation
+# of Variety, however I have now decided as I know to seperate much more than
+# that. This is now the wallpaper installation script.
+
+echo "Variety is a wallpaper manager for Linux systems. It supports out-of-the-box
 most Linux desktop environments, and can be configured to work on more esoteric ones.
 It can use local images or automatically download wallpapers from Flickr, Wallhaven,
 Unsplash, Bing, Reddit and other online sources.
@@ -68,6 +75,69 @@ case "$DISTRO" in
 esac
 }
 
+# -------------------------------------------INSTALLATION OF WALLPAPERS
+
+info_wallpapers() {
+	echo "--------------------------------------------------"
+	echo "This function will just download some nice wallpapers."
+	echo
+	echo "The wallpapers will be downloaded to the following directory:"
+	echo "	- Wallpapers: $HOME/Pictures/the_chosen_ones"
+	echo
+
+}
+prompt_wallpapers() {
+	read -p "--------------------------------------------------
+Do you want to download wallpapers? (Y/N): " response
+	case $response in
+		[yY])
+			download_wallpapers
+			;;
+		[nN])
+			echo "Skipping wallpapers download."
+			;;
+		*)
+			echo "Invalid response. Please enter Y or N."
+			prompt_wallpapers
+			;;
+	esac
+}
+
+download_wallpapers() {
+# Source and destination directories
+SRC_WALLPAPERS="$current_dir/wallpapers"
+DEST_WALLPAPERS="$HOME/Pictures/the_chosen_ones"
+
+# Check if the destination directory exists, create it if not
+if [ ! -d "$DEST_WALLPAPERS" ]; then
+	echo "
+Creating directory $DEST_WALLPAPERS..."
+	mkdir -p "$DEST_WALLPAPERS"
+	check_status "Failed to create directory $DEST_WALLPAPERS"
+else
+	echo "
+Directory $DEST_WALLPAPERS already exists."
+fi
+
+# Copy wallpapers to the destination directory
+echo "Downloading wallpapers..."
+#TODO: cp -r "$SRC_WALLPAPERS/"* "$DEST_WALLPAPERS"
+check_status "Failed to download wallpapers"
+
+echo "
+✓ Wallpapers download complete.
+"
+}
+
+applying_wallpapers() {
+	echo "Changing your wallpaper to $HOME/Pictures/the_chosen_ones/highland_cow_grain_0_070.jpg"
+	gsettings set org.gnome.desktop.background picture-uri "file://$HOME/Pictures/the_chosen_ones/highland_cow_grain_0_070.jpg"
+
+}
+
+
+
+#-----------------------------------------------------------SOME NOTES:
 
 # The following is one custom key binding, specifically my kitty binding. It can
 # be pulled as follows.
